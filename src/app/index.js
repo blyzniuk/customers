@@ -11,7 +11,8 @@ import customersList from './components/customersList/customersList.component';
 import customersListItem from './components/customersListItem/customersListItem.component';
 import customersProfile from './components/customersProfile/customersProfile.component';
 
-const api = 'http://localhost\:3000/api/';
+//const api = 'http://localhost\:3000/api/';
+const api = 'https://customers-list.herokuapp.com/api/';
 
 angular.module('customers', [ngMaterial, uiRouter, ngResource])
     .constant('CUSTOMERS_RESOURCE_URL', `${api}customers/:id`)
