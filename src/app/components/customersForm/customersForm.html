@@ -1,0 +1,14 @@
+<form name="customersForm">
+    <div ng-repeat="(key, value) in cutomersFormCtrl.customer">
+        <md-input-container class="md-block">
+            <label ng-bind="key"></label>
+            <input required="" name="{{key}}" ng-model="value">
+            <div ng-messages="customersForm[key][$error]">
+                <div ng-message="required">This is required.</div>
+            </div>
+        </md-input-container>
+    </div>
+    <div>
+        <md-button type="submit" ng-submit="cutomersFormCtrl.onSubmitClick()">Submit</md-button>
+    </div>
+</form>
