@@ -1,7 +1,10 @@
-#For local start:
+##For local start:
 npm install
 npm start
 open in browser: http://localhost:3000
+
+##Also you can find this app at:
+https://customers-list.herokuapp.com/
 
 Using Bootstrap 3 or MDL and jQuery create a single page web application that allows a user to Create, List, Update and Delete customers. A customer is made of up the following attributes:
 - Name;
