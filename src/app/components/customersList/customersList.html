@@ -1,7 +1,9 @@
 <md-content layout-padding="">
-    <ul>
-        <li ng-repeat="customer in customersListCtrl.customers">
+    <md-list flex="">
+        <div ng-repeat="customer in customersListCtrl.customers">
             <customers-list-item customer="customer"></customers-list-item>
-        </li>
-    </ul>
+            <md-divider></md-divider>
+        </div>
+
+    </md-list>
 </md-content>

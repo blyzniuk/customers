@@ -1,17 +1,15 @@
 import CustomersListController from './customersList.controller';
+import templateUrl from './customersList.html';
 
 const name = 'customersList';
 
 const config = {
     url: '/',
-    template: '<p>adasaaddsa</p>',
+    templateUrl,
     controller: CustomersListController,
     controllerAs: 'customersListCtrl',
     resolve: {
-        customers: (CustomersResourses) => {
-            console.log('smth');
-            return CustomersResourses.$get();
-        }
+        customers: (CustomersResource) => CustomersResource.query()
     }
 };
 

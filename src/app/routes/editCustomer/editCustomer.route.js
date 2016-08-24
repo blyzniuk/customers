@@ -9,7 +9,7 @@ const config = {
     controller: EditCustomerController,
     controllerAs: 'editCustomerCtrl',
     resolve: {
-        customer: (CustomersResourses, $stateParams) => CustomersResourses.$get({ id: $stateParams.id })
+        customer: (CustomersResource, $stateParams) => CustomersResource.get({ id: $stateParams.id })
     }
 };
 

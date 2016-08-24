@@ -12,5 +12,6 @@ module.exports = {
             test: /\.html$/,
             loader: 'ngtemplate!html'
         }]
-    }
+    },
+    devtool: 'inline-source-map'
 }

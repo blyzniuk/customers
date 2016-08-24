@@ -1,14 +1,62 @@
-<form name="customersForm">
-    <div ng-repeat="(key, value) in cutomersFormCtrl.customer">
-        <md-input-container class="md-block">
-            <label ng-bind="key"></label>
-            <input required="" name="{{key}}" ng-model="value">
-            <div ng-messages="customersForm[key][$error]">
-                <div ng-message="required">This is required.</div>
-            </div>
-        </md-input-container>
-    </div>
-    <div>
-        <md-button type="submit" ng-submit="cutomersFormCtrl.onSubmitClick()">Submit</md-button>
+<form name="customersForm" ng-submit="customersFormCtrl.onSubmit({customer: customersFormCtrl.customer})">
+    <md-input-container class="md-block">
+        <label>Name</label>
+        <input required="" name="name" ng-model="customersFormCtrl.customer.name">
+        <div ng-messages="customersForm.name.$error">
+            <div ng-message="required">This field is required.</div>
+        </div>
+    </md-input-container>
+    <md-input-container class="md-block">
+        <label>Email</label>
+        <input required="" name="email" ng-model="customersFormCtrl.customer.email">
+        <div ng-messages="customersForm.email.$error">
+            <div ng-message="required">This field is required.</div>
+        </div>
+    </md-input-container>
+    <md-input-container class="md-block">
+        <label>Telephone</label>
+        <input required="" name="telephone" ng-model="customersFormCtrl.customer.telephone">
+        <div ng-messages="customersForm.telephone.$error">
+            <div ng-message="required">This field is required.</div>
+        </div>
+    </md-input-container>
+    <md-input-container class="md-block">
+        <label>Address</label>
+        <input required="" name="address" ng-model="customersFormCtrl.customer.address">
+        <div ng-messages="customersForm.address.$error">
+            <div ng-message="required">This field is required.</div>
+        </div>
+    </md-input-container>
+    <md-input-container class="md-block">
+        <label>Street</label>
+        <input required="" name="street" ng-model="customersFormCtrl.customer.street">
+        <div ng-messages="customersForm.street.$error">
+            <div ng-message="required">This field is required.</div>
+        </div>
+    </md-input-container>
+    <md-input-container class="md-block">
+        <label>State</label>
+        <input required="" name="state" ng-model="customersFormCtrl.customer.state">
+        <div ng-messages="customersForm.state.$error">
+            <div ng-message="required">This field is required.</div>
+        </div>
+    </md-input-container>
+    <md-input-container class="md-block">
+        <label>City</label>
+        <input required="" name="city" ng-model="customersFormCtrl.customer.city">
+        <div ng-messages="customersForm.city.$error">
+            <div ng-message="required">This field is required.</div>
+        </div>
+    </md-input-container>
+    <md-input-container class="md-block">
+        <label>Zip</label>
+        <input required="" name="zip" ng-model="customersFormCtrl.customer.zip">
+        <div ng-messages="customersForm.zip.$error">
+            <div ng-message="required">This field is required.</div>
+        </div>
+    </md-input-container>
+
+    <div layout="row" layout-align="end center">
+        <md-button type="submit">Submit</md-button>
     </div>
 </form>

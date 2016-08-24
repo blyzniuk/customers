@@ -1,3 +1,7 @@
-<h1>Edit customer</h1>
-<customers-form customer="editCustomerCtrl.customer" on-submit="editCustomerCtrl.onSubmit">
+<md-toolbar layout="row" class="md-hue-3">
+    <div class="md-toolbar-tools">
+        <span>Edit customer</span>
+    </div>
+</md-toolbar>
+<customers-form customer="editCustomerCtrl.customer" on-submit="editCustomerCtrl.onSubmit(customer)">
 </customers-form>

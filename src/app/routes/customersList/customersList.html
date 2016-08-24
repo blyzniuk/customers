@@ -1,2 +1,9 @@
-<h1>Customers</h1>
+<md-toolbar layout="row" class="md-hue-3">
+    <div class="md-toolbar-tools">
+        <span>Customers</span>
+    </div>
+</md-toolbar>
+<div layout="row" layout-align="end center">
+    <md-button ng-click="customersListCtrl.onAddClick()">Add new</md-button>
+</div>
 <customers-list customers="customersListCtrl.customers"></customers-list>

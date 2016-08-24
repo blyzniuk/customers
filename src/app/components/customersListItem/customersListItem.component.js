@@ -12,6 +12,11 @@ class CustomersListItemController {
     onEditClick() {
         this.$state.go('editCustomer', { id: this.customer._id });
     }
+
+    getAddressLine() {
+        const {address, street, city, state} = this.customer;
+        return [address, street, city, state].filter((item) => !!item).join(',');
+    }
 }
 
 export default {

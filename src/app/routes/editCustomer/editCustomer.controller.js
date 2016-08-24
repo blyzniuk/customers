@@ -8,8 +8,9 @@ class EditCustomerController {
     }
 
     onSubmit(customer) {
-        CustomersResource.update(customer)
-            .then((savedCustomer) => $state.go('customer', { id: savedCustomer._id }));
+        this.CustomersResource.update({ id: customer._id }, customer)
+            .$promise
+            .then((savedCustomer) => this.$state.go('customer', { id: savedCustomer._id }));
     }
 };
 

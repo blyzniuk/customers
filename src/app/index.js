@@ -13,7 +13,7 @@ import customersProfile from './components/customersProfile/customersProfile.com
 
 const api = 'http://localhost\:3000/api/';
 
-angular.module('customers', [uiRouter, ngResource])
+angular.module('customers', [ngMaterial, uiRouter, ngResource])
     .constant('CUSTOMERS_RESOURCE_URL', `${api}customers/:id`)
     .service('CustomersResource', CustomersResource)
     .config(routerConfig)

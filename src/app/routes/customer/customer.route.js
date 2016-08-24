@@ -1,14 +1,15 @@
 import CustomerController from './customer.controller';
+import templateUrl from './customer.html';
 
 const name = 'customer';
 
 const config = {
     url: '/:id',
-    templateUrl: 'customer/customer.html',
+    templateUrl,
     controller: CustomerController,
     controllerAs: 'customerCtrl',
     resolve: {
-        customer: (CustomersResourses, $stateParams) => CustomersResourses.$get({ id: $stateParams.projectId })
+        customer: (CustomersResource, $stateParams) => CustomersResource.get({ id: $stateParams.id })
     }
 };
 

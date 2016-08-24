@@ -1,6 +1,13 @@
 class CustomersListController {
-    constructor(customers) {
-        this.customers = customers;
+    constructor(customers, $state) {
+        Object.assign(this, {
+            customers,
+            $state
+        })
+    }
+
+    onAddClick() {
+        this.$state.go('addCustomer');
     }
 }
 

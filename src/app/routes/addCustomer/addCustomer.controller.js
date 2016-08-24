@@ -8,7 +8,8 @@ class AddCustomerController {
     }
 
     onSubmit(customer) {
-        this.CustomersResource.add(customer)
+        this.CustomersResource.save(customer)
+            .$promise
             .then((savedCustomer) => this.$state.go('customer', { id: savedCustomer._id }));
     }
 }

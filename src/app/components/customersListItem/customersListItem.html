@@ -1,1 +1,12 @@
-Customers list item
+<md-list-item class="md-3-line">
+    <div class="md-list-item-text" layout="column">
+        <h2 ng-bind="customersListItemCtrl.customer.name"
+            ng-click="customersListItemCtrl.onNameClick()"></h2>
+        <h4 ng-bind="customersListItemCtrl.customer.email"></h4>
+        <h4 ng-bind="customersListItemCtrl.customer.telephone"></h4>
+        <p ng-bind="customersListItemCtrl.getAddressLine()"></p>
+    </div>
+    <div layout="row" layout-align="end center">
+        <md-button ng-click="customersListItemCtrl.onEditClick()">Edit</md-button>
+    </div>
+</md-list-item>
