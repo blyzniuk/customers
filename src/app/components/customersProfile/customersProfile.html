@@ -1,12 +1,16 @@
 <h2 ng-bind="customersProfileCtrl.customer.name"></h2>
-<p ng-bind="customersProfileCtrl.customer.name"></p>
-<p ng-bind="customersProfileCtrl.customer.email"></p>
-<p ng-bind="customersProfileCtrl.customer.telephone"></p>
-<p ng-bind="customersProfileCtrl.customer.address"></p>
-<p ng-bind="customersProfileCtrl.customer.street"></p>
-<p ng-bind="customersProfileCtrl.customer.state"></p>
-<p ng-bind="customersProfileCtrl.customer.city"></p>
-<p ng-bind="customersProfileCtrl.customer.zip"></p>
+<p class="md-body-2">
+    {{customersProfileCtrl.customer.email}} <br/>
+    {{customersProfileCtrl.customer.telephone}}
+</p>
+<p class="md-body-1">
+    {{customersProfileCtrl.customer.address}}<br/>
+    {{customersProfileCtrl.customer.street}}<br/>
+    {{customersProfileCtrl.customer.state}}<br/>
+    {{customersProfileCtrl.customer.city}}<br/>
+    {{customersProfileCtrl.customer.zip}}
+</p>
+<p class="md-body-1" ng-bind="customersPrYofileCtrl.customer.zip"></p>
 <div layout="row" layout-wrap layout-align="end center">
     <md-button class="md-raised" type="button" ng-click="customersProfileCtrl.onEditClick()">Edit</md-button>
     <md-button class="md-raised md-warn" type="button" ng-click="customersProfileCtrl.onDeleteClick()">Delete</md-button>

@@ -4,8 +4,8 @@ var webserver = require('gulp-webserver');
 var fs = require('fs');
 
 var path = {
-    scripts: 'src/app',
-    templates: 'src/app/**/*.html'
+    styles: 'node_modules/angular-material/angular-material.min.css',
+    indexHtml: 'src/index.html'
 };
 
 gulp.task('serve', function(cb) {
@@ -16,7 +16,7 @@ gulp.task('serve', function(cb) {
     });
 });
 
-gulp.task('serve', function(cb) {
+gulp.task('webpack', function(cb) {
     exec('webpack', function(err, stdout, stderr) {
         console.log(stdout);
         console.log(stderr);
@@ -24,7 +24,17 @@ gulp.task('serve', function(cb) {
     });
 });
 
-gulp.task('webserver', function() {
+gulp.task('copyIndex', function () {
+    return gulp.src(path.indexHtml)
+        .pipe(gulp.dest('bundle'));
+});
+
+gulp.task('copyStyles', function () {
+    return gulp.src(path.styles)
+        .pipe(gulp.dest('bundle'));
+});
+
+gulp.task('webserver', ['webpack', 'copyStyles', 'copyIndex'], function() {
     gulp.src('bundle')
         .pipe(webserver({
             livereload: true,
@@ -32,4 +42,4 @@ gulp.task('webserver', function() {
         }));
 });
 
-gulp.task('dev', ['webserver']);
+gulp.task('start', ['webserver', 'serve']);
