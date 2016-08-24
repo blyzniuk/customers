@@ -12,6 +12,7 @@ mongoose.connect('mongodb://admin:admin@ds013946.mlab.com:13946/customers', (err
 
 const app = express();
 const server = require('http').createServer(app);
+app.use(express.static(__dirname + '/bundle'));
 
 // apply this rule to all requests accessing any URL/URI
 app.all('*', function(req, res, next) {

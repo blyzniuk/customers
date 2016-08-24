@@ -8,7 +8,7 @@ var path = {
     indexHtml: 'src/index.html'
 };
 
-gulp.task('serve', function(cb) {
+gulp.task('serve', ['webpack', 'copyStyles', 'copyIndex'], function(cb) {
     exec('node app.js', function(err, stdout, stderr) {
         console.log(stdout);
         console.log(stderr);
@@ -34,12 +34,4 @@ gulp.task('copyStyles', function () {
         .pipe(gulp.dest('bundle'));
 });
 
-gulp.task('webserver', ['webpack', 'copyStyles', 'copyIndex'], function() {
-    gulp.src('bundle')
-        .pipe(webserver({
-            livereload: true,
-            open: 'http://localhost:'+ process.env.PORT || 8000
-        }));
-});
-
-gulp.task('start', ['webserver', 'serve']);
+gulp.task('start', ['serve']);
