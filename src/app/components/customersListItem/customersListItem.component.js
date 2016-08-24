@@ -5,12 +5,8 @@ class CustomersListItemController {
         this.$state = $state;
     }
 
-    onNameClick() {
+    onClick() {
         this.$state.go('customer', { id: this.customer._id });
-    }
-
-    onEditClick() {
-        this.$state.go('editCustomer', { id: this.customer._id });
     }
 
     getAddressLine() {

@@ -7,3 +7,7 @@
 <p ng-bind="customersProfileCtrl.customer.state"></p>
 <p ng-bind="customersProfileCtrl.customer.city"></p>
 <p ng-bind="customersProfileCtrl.customer.zip"></p>
+<div layout="row" layout-wrap layout-align="end center">
+    <md-button class="md-raised" type="button" ng-click="customersProfileCtrl.onEditClick()">Edit</md-button>
+    <md-button class="md-raised md-warn" type="button" ng-click="customersProfileCtrl.onDeleteClick()">Delete</md-button>
+</div>
