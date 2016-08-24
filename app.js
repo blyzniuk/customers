@@ -4,7 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 mongoose.Promise = require('q').Promise;
 
-const port = 3000;
+const port = process.env.PORT ||3000;
 
 mongoose.connect('mongodb://admin:admin@ds013946.mlab.com:13946/customers', (err) => {
     err ? console.error(err) : console.log('mongo connected');

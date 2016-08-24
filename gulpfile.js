@@ -38,7 +38,7 @@ gulp.task('webserver', ['webpack', 'copyStyles', 'copyIndex'], function() {
     gulp.src('bundle')
         .pipe(webserver({
             livereload: true,
-            open: 'http://localhost:8000/'
+            open: 'http://localhost:'+ process.env.PORT || 8000
         }));
 });
 
